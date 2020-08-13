@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FakeApiService } from '../service/fake-api.service';
 import { BooksList } from '../models/BooksList';
+import { combineLatest, Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-books-list',
@@ -8,18 +11,20 @@ import { BooksList } from '../models/BooksList';
   styleUrls: ['./books-list.component.scss']
 })
 export class BooksListComponent implements OnInit {
-  books: BooksList[]; 
-
-  constructor(private fakeApiService: FakeApiService) { }
-
-  ngOnInit(): void {
-    this.displayBooksList();
+  filteredBooks$: Observable<BooksList[]>;
+  filter: FormControl;
+  constructor(private fakeApiService: FakeApiService) {
+    this.filter = new FormControl('');
   }
 
-  displayBooksList() {
-    this.fakeApiService.getBooks().subscribe( resp => {
-      this.books = resp;
-    });
+  ngOnInit(): void {
+
+    this.filteredBooks$ = combineLatest(this.fakeApiService.getBooks(), this.filter.valueChanges.pipe(startWith('')))
+    .pipe(
+      map(([books, filterString]) => books.filter(book =>
+        !filterString ||
+        book.titulo.toLowerCase().indexOf(filterString.toLowerCase()) !== -1 ||
+        book.escritor.toLowerCase().indexOf(filterString.toLowerCase()) !== -1)));
   }
 
 }

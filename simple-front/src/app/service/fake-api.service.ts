@@ -8,8 +8,8 @@ import { retry, catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class FakeApiService {
-  readonly apiURL : string;
-  
+  readonly apiURL: string;
+
   constructor(public http: HttpClient) { 
     this.apiURL = `https://api-livros.herokuapp.com`;
   }

@@ -1,7 +1,13 @@
-<p>books-list works!</p>
+<!-- <input type="text" [formControl]="filter" > -->
 
-<ul>
-    <li *ngFor="let book of books">
-        {{ book.titulo }}
+<section>
+
+  <input type="text" [formControl]="filter" placeholder="Filter books...">
+  
+  <ul>
+    <li *ngFor="let book of filteredBooks$ | async">
+      {{ book.titulo }}
     </li>
-</ul>
+  </ul>
+  
+</section>
