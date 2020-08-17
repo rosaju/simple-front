@@ -1,0 +1,13 @@
+<section>
+    <aside>
+        <input type="text" [formControl]="filter" placeholder="Choose your Pokemon">
+    </aside>
+
+    
+    <ul>
+      <li *ngFor="let pokemon of filteredPokemons$ | async">
+        {{ pokemon.englishName }}
+      </li>
+    </ul>
+    
+  </section>

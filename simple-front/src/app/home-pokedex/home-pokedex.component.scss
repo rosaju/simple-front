@@ -1,0 +1,14 @@
+.pokedex {
+    background-color: #e7e7e7;
+    background-image: url("/assets/img/pk-site-bg-001.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    &__header {
+        display: flex;
+        justify-content: center;
+        padding: 1.2rem;
+    }
+}

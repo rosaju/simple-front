@@ -4,15 +4,17 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BooksListComponent } from './books-list/books-list.component';
 
 import { ReactiveFormsModule} from '@angular/forms';
+import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
+import { HomePokedexComponent } from './home-pokedex/home-pokedex.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    BooksListComponent
+    PokemonListComponent,
+    HomePokedexComponent
   ],
   imports: [
     BrowserModule,
