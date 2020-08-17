@@ -1,13 +1,30 @@
-<section>
-    <aside>
-        <input type="text" [formControl]="filter" placeholder="Choose your Pokemon">
+<section class="pokedex">
+    <aside class="pokedex__search">
+        <label class="pokedex__search--label">
+            Search by name, number or type
+            <input type="text" [formControl]="filter" placeholder="Choose your Pokemon" class="pokedex__search--input">
+        </label>
     </aside>
 
-    
-    <ul>
-      <li *ngFor="let pokemon of filteredPokemons$ | async">
-        {{ pokemon.englishName }}
-      </li>
+
+    <ul class="pokedex__list">
+        <li *ngFor="let pokemon of filteredPokemons$ | async" class="pokedex__list--item">
+            <h3>{{ pokemon.englishName }}</h3>
+
+            <div class="additional__infos">
+                <ul>
+                    <li>
+                        <img [src]="iconPath(pokemon.primaryType)" alt="pokemon type icon">
+                        <p [ngClass]="['theme__' + pokemon.primaryType]">{{ pokemon.primaryType }}</p>
+                    </li>
+                    <li *ngIf="pokemon.secondaryType != ''">
+                        <img [src]="iconPath(pokemon.secondaryType)" alt="pokemon type icon">
+                        <p [ngClass]="['theme__' + pokemon.secondaryType]">{{ pokemon?.secondaryType }}</p>
+                    </li>
+                </ul>
+                <p class="pokemon__number">#{{ pokemon.pokedexNumber }}</p>
+            </div>
+        </li>
     </ul>
-    
-  </section>
+
+</section>

@@ -1,0 +1,181 @@
+.pokedex {
+    display: flex;
+    flex-flow: wrap;
+    font-family: 'Montserrat', sans-serif;
+
+    &__search {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 1.5rem;
+
+        &--label {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            font-weight: 500;
+            color: #3a5ea9;
+        }
+
+        &--input {
+            height: 3rem;
+            width: 23rem;
+            border: solid 3px #3a5ea9;
+            font-weight: 600;
+            font-size: 1.5rem;
+            text-align: center;
+            text-transform: uppercase;
+            background-color: #e7e7e7;
+            color: #3a5ea9;
+        }
+        
+    }
+    
+    &__list {
+        display: flex;
+        flex-flow: wrap;
+        justify-content: center;
+        padding: 0;
+        list-style: none;
+        
+        &--item {
+            height: 4rem;
+            width: 21.5rem;
+            margin: 0.5rem;
+            padding: 1rem;
+            background-color: #fff;
+            -webkit-box-shadow: 0px 0px 12px -2px rgba(176,176,176,1);
+            -moz-box-shadow: 0px 0px 12px -2px rgba(176,176,176,1);
+            box-shadow: 0px 0px 12px -2px rgba(176,176,176,1);
+
+            h3 {
+                margin: 0;
+                font-size: 1.4rem;
+                font-weight: 800;
+                text-transform: uppercase; 
+                color: #888888;
+            }
+            
+        }
+    }
+}
+
+.additional__infos {
+    display: flex;
+    justify-content: space-between;
+
+    ul {
+        display: flex;
+        padding: 0;
+
+        li {
+            display: flex;
+            align-items: center;
+            padding-right: 1rem;
+        }
+    }
+
+    img {
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+
+    p {
+        padding-left: 0.3rem;
+        font-weight: 800;
+        text-transform: capitalize;
+    }
+}
+
+.pokemon__number{
+    font-weight: 800;
+    color: #888888;
+}
+
+.theme__bug {
+    color: #a0cc47;
+}
+
+.theme__dark {
+    color: #73553f;
+}
+
+.theme__electric {
+    color: #ffcc33;
+}
+
+.theme__dragon {
+    color: #5050e6;
+}
+
+.theme__fairy {
+    color: #e67eda;
+}
+
+.theme__fighting {
+    color: #b34a36;
+}
+
+.theme__fire {
+    color: #f26130;
+}
+
+.theme__flying {
+    color: #7e87E6;
+}
+
+.theme__ghost {
+    color: #6652cc;
+}
+
+.theme__grass {
+    color: #56BF4D;
+}
+
+.theme__ground {
+    color: #bfa156;
+}
+
+.theme__ice {
+    color: #66cdcd;
+}
+
+.theme__normal {
+    color: #a69974;
+}
+
+.theme__poison {
+    color: #bf43aa;
+}
+
+.theme__psychic {
+    color: #ff4d79;
+}
+
+.theme__rock {
+    color: #a68542;
+}
+
+.theme__steel {
+    color: #a3aacc;
+}
+
+.theme__water {
+    color: #2b9fd9;
+}
+
+::-webkit-input-placeholder {
+    color: #3a5ea9;
+}
+  
+ :-moz-placeholder { 
+    color: #3a5ea9;  
+}
+  
+ ::-moz-placeholder {
+    color: #3a5ea9;  
+}
+  
+ :-ms-input-placeholder {  
+    color: #3a5ea9;  
+}
