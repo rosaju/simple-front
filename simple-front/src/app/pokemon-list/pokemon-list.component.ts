@@ -4,7 +4,6 @@ import { PokemonService } from '../service/pokemon.service';
 import { PokemonList } from '../models/PokemonList';
 import { FormControl } from '@angular/forms';
 import { map, startWith } from 'rxjs/operators';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -14,9 +13,8 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 export class PokemonListComponent implements OnInit {
   filteredPokemons$: Observable<PokemonList[]>;
   filter = new FormControl('');
-  iconType: SafeResourceUrl;
 
-  constructor(private pokemonService: PokemonService, private sanitizer: DomSanitizer) { }
+  constructor(private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
 
